@@ -1,11 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@font-face {
+	font-family: amicatto-font;
+	src: url("../fonts/Nickainley-Normal.otf") format("opentype");
+}
 
 :root {
-	--primary-color: rgb(104, 5, 196);
+	--primary-color: #532162;
 	--secondary-color: rgb(163, 13, 163);
 	--dark-color: rgb(34, 13, 41);
 	--light-color: rgb(235, 176, 241);
 	--primary-text-color: white;
+	--secondary-text-color: #e2a4f4;
+	--logo-paw-color: #e64baa;
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
 }
@@ -66,7 +72,9 @@ pre {
 }
 
 .navbar a {
-	color: white;
+	font-size: 20px;
+	color: var(--primary-text-color);
+	font-weight: bold;
 	padding: 10px;
 	margin: 0 5px;
 }
@@ -79,9 +87,12 @@ pre {
 	justify-content: space-between;
 }
 
-.logo {
-	font-size: 28px;
-	font-weight: bold;
+.logo a {
+	font-size: 36px;
+	font-family: amicatto-font;
+	color: var(--secondary-text-color);
+	text-shadow: calc(36px * 0.04) 0 #ff3873;
+	font-weight: normal;
 }
 
 /* Showcase */
@@ -91,6 +102,8 @@ pre {
 	background-color: var(--primary-color);
 	color: white;
 	position: relative;
+	padding-bottom: 20px;
+	margin-bottom: 30px;
 }
 
 .showcase h1 {
@@ -141,7 +154,23 @@ pre {
 	outline: none;
 }
 
-.showcase::before,
+.showcase-img {
+	animation: slideInFromRight 1s ease-in;
+}
+
+#showcase-img {
+	width: 80%;
+	height: 80%;
+	border-radius: 25px;
+	-webkit-mask-image: radial-gradient(
+		circle,
+		black 10%,
+		rgba(0, 0, 0, 0.05) 60%
+	);
+	mask-image: radial-gradient(circle, black 10%, rgba(0, 0, 0, 0.05) 60%);
+}
+
+/*.showcase::before,
 .showcase::after {
 	content: "";
 	position: absolute;
@@ -154,9 +183,18 @@ pre {
 	-webkit-transform: skewY(-3deg);
 	-moz-transform: skewY(-3deg);
 	-ms-transform: skewY(-3deg);
+}*/
+
+/* Funny bar */
+
+.funny-bar {
+	height: 200px;
+	background-image: url("../images/pillowsJoined.png");
+	background-size: contain;
+	background-repeat: repeat-x;
 }
 
-/* Stats */
+/* Stats 
 
 .stats {
 	padding-top: 100px;
@@ -177,8 +215,8 @@ pre {
 	font-size: 20px;
 	font-weight: bold;
 }
-
-/* Cli */
+*/
+/* Cli 
 
 .cli .grid {
 	grid-template-columns: repeat(3, 1fr);
@@ -189,39 +227,34 @@ pre {
 	grid-column: 1 / span 2;
 	grid-row: 1 / span 2;
 }
-
+*/
 /* Cloud*/
 
 .cloud .grid {
 	grid-template-columns: 4fr 3fr;
 }
 
-/* Languages */
+/* projects */
 
-.languages {
+.projects {
 	color: black;
 }
 
-.languages .flex {
+.projects .flex {
 	flex-wrap: wraps;
 }
-.languages .card {
+.projects .card {
 	text-align: center;
 	margin: 18px 10px 40px;
 	transition: transform 0.2s ease-in;
 }
 
-.languages.card h4 {
-	font-size: 20px;
-	margin-bottom: 10px;
-}
-
-.languages .card:hover {
+.projects .card:hover {
 	transform: translateY(-15px);
 }
 
 /* Features */
-
+/*
 .features-head img .docs-head img {
 	width: 250px;
 	justify-self: flex-end;
@@ -249,7 +282,7 @@ pre {
 }
 
 /* Docs */
-
+/*
 .docs-main h3 {
 	margin: 20px 0;
 }

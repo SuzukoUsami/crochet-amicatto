@@ -9,10 +9,10 @@
 
 .card {
 	background-color: white;
-	color: rgb(67, 21, 109);
+	color: var(--secondary-text-color);
 	border-radius: 10px;
 	box-shadow: 0 3px 10px black;
-	padding: 20px;
+	padding: 10px;
 	margin: 10px;
 }
 
